@@ -1,0 +1,35 @@
+def sum_divisors(n):
+    i = n
+    global sum
+    sum = 0
+    result = 0
+    if n == 0:
+        result = 0
+    else:
+        while n % i == 0:
+            if i == 0:
+                break
+            else:
+                sum = sum + i
+                i = i - 1
+                # print(sum - n, i + 1)
+                result = sum - n
+            if i == 0:
+                break
+            else:
+                while n % i != 0:
+                    i = i - 1
+            result = sum - n
+    return result
+    
+            
+            
+print(sum_divisors(0))
+# 0
+print(sum_divisors(3)) # Should sum of 1
+# 1
+print(sum_divisors(36)) # Should sum of 1+2+3+4+6+9+12+18
+# 55
+print(sum_divisors(102)) # Should be sum of 2+3+6+17+34+51
+# 114
+
